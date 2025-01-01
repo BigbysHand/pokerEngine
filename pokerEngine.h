@@ -1,12 +1,17 @@
 ﻿// pokerEngine.h : Include file for standard system include files,
 // or project specific include files.
 
-#pragma once
+#ifndef POKERENGINE
+#define POKERENGINE
 
 #include <iostream>
 #include <unordered_map>
 
-static const int SUITS = 4;
+/*
+In a fair game of poker, the cards are always drawn from the top of the deck
+as such the best data strcuture to simulate this behaviour is a stack (F.I.L.O)
+by "loading" the deck randomly in a linear fashion we can simulate a deck of playing cards 
+*/
 
 enum cardValues : int
 {
@@ -23,7 +28,8 @@ enum cardValues : int
 	JACK =  11,
 	QUEEN = 12, 
 	KING =  13, 
-	ACE =   14
+	ACE =   14,
+	LASTVAL
 };
 
 enum cardSuit : char
@@ -31,26 +37,16 @@ enum cardSuit : char
 	HEARTS =   '0',
 	DIAMONDS = '1',
 	CLUBS =    '2',
-	SPADES =   '3'
+	SPADES =   '3',
+	LASTSUIT
 };
 
 //to abstract each card for handling
-typedef struct
+typedef struct Cards
 {
 	cardValues val;
 	cardSuit suit;
 
-}Card;
+}Cards;
 
-//define deck params
-typedef struct 
-{
-
-	char suits[SUITS];
-	std::unordered_map<char, Card> cards;
-
-}Deck;
-
-
-
-
+#endif

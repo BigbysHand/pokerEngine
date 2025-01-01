@@ -2,11 +2,14 @@
 //
 
 #include "pokerEngine.h"
+#include "dealer.h"
 
 using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
+
+	Dealer dealer = Dealer(2);
+
 	return 0;
 }
