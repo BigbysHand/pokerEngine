@@ -1,7 +1,4 @@
-﻿// pokerEngine.h : Include file for standard system include files,
-// or project specific include files.
-
-#ifndef POKERENGINE
+﻿#ifndef POKERENGINE
 #define POKERENGINE
 
 #include <iostream>
@@ -32,12 +29,12 @@ enum cardValues : int
 	LASTVAL
 };
 
-enum cardSuit : char
+enum cardSuit : int
 {
-	HEARTS =   '0',
-	DIAMONDS = '1',
-	CLUBS =    '2',
-	SPADES =   '3',
+	HEARTS,
+	DIAMONDS,
+	CLUBS,
+	SPADES,
 	LASTSUIT
 };
 
